@@ -1,9 +1,18 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Button, View } from 'react-native';
+//import { useRookAuth } from 'rook_auth';
 
 const Example = () => {
   const navigation = useNavigation();
+
+  /*const { apiURL, clientUUID, password } = useRookAuth();
+
+  const { checkUserID } = useUser({ user: 'example@example.com' });
+  useEffect(() => {
+    console.log(apiURL, clientUUID, password);
+    checkUserID().then(console.log);
+  }, [apiURL, clientUUID, password]);*/
 
   return (
     <View>

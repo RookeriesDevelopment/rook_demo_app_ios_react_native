@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHSleep } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { Route } from '@react-navigation/native';
+import { useUser } from '../hooks/useUser';
 
-export const Sleep = () => {
+type SleepProps = {
+  route: Route<string>;
+};
+
+export const Sleep: FC<SleepProps> = ({ route }) => {
   const [date, setDate] = useState('');
   const [data, setData] = useState<string | Map<string, any>>('');
 
@@ -14,8 +20,15 @@ export const Sleep = () => {
   const { ready, getLastExtractionDateOfSleep, getSleepSummary } =
     useRookAHSleep();
 
+  const { checkUserID } = useUser({ user: 'example@example.com' });
+
+  useEffect(() => {
+    checkUserID().then(console.log);
+  }, []);
+
   const onLastDate = async (): Promise<void> => {
     try {
+      console.log(route.params);
       const response = await getLastExtractionDateOfSleep();
       setData(response);
     } catch (error) {

@@ -18,26 +18,19 @@ const App = () => {
     );
   };*/
   return (
-    <Provider store={store}>
-      {/**
-       * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
-       * and saved to redux.
-       * The `loading` prop can be `null` or any react instance to show during loading (e.g. a splash screen),
-       * for example `loading={<SplashScreen />}`.
-       * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
-       */}
-      <PersistGate loading={null} persistor={persistor}>
-        <RookConnectProvider
-          keys={{
-            clientUUID: '9593d0ec-47c1-4477-a8ce-10d3f4f43127',
-            apiURL: 'https://api.rook-connect.dev',
-            password: 'YR9GoQ3mP0zey5nZ9w3WHQMvtvFvMdnefblx',
-          }}
-        >
+    <RookConnectProvider
+      keys={{
+        clientUUID: '9593d0ec-47c1-4477-a8ce-10d3f4f43127',
+        apiURL: 'https://api.rook-connect.dev',
+        password: 'YR9GoQ3mP0zey5nZ9w3WHQMvtvFvMdnefblx',
+      }}
+    >
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
           <ApplicationNavigator />
-        </RookConnectProvider>
-      </PersistGate>
-    </Provider>
+        </PersistGate>
+      </Provider>
+    </RookConnectProvider>
   );
 };
 
