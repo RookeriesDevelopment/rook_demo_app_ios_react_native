@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHPhysical } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { useUser } from '../hooks/useUser';
+import { PhysicalTransmission } from '../components';
 
 export const Physical = () => {
+  const [userID, setUserID] = useState('');
   const [date, setDate] = useState('');
   const [data, setData] = useState<string | Map<string, any>>('');
 
@@ -13,6 +16,14 @@ export const Physical = () => {
 
   const { ready, getLastExtractionDateOfPhysical, getPhysicalSummary } =
     useRookAHPhysical();
+
+  const { checkUserID } = useUser({ user: 'example@example.com' });
+
+  useEffect(() => {
+    checkUserID()
+      .then(id => setUserID(id))
+      .catch(console.log);
+  }, []);
 
   const onLastDate = async (): Promise<void> => {
     try {
@@ -55,6 +66,14 @@ export const Physical = () => {
       />
       <Button title="Last Date" onPress={onLastDate} />
       <Button title="Get Body Summary" onPress={onPhysicalSummary} />
+
+      {userID && (
+        <PhysicalTransmission
+          userID={userID}
+          setData={queue => setData(queue)}
+          date={date}
+        />
+      )}
 
       <JSONTree data={data} />
     </View>

@@ -1,17 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHSleep } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
-import { Route } from '@react-navigation/native';
 import { useUser } from '../hooks/useUser';
+import { SleepTransmission } from '../components';
 
-type SleepProps = {
-  route: Route<string>;
-};
-
-export const Sleep: FC<SleepProps> = ({ route }) => {
+export const Sleep = () => {
+  const [userID, setUserID] = useState('');
   const [date, setDate] = useState('');
   const [data, setData] = useState<string | Map<string, any>>('');
 
@@ -23,12 +20,13 @@ export const Sleep: FC<SleepProps> = ({ route }) => {
   const { checkUserID } = useUser({ user: 'example@example.com' });
 
   useEffect(() => {
-    checkUserID().then(console.log);
+    checkUserID()
+      .then(id => setUserID(id))
+      .catch(console.log);
   }, []);
 
   const onLastDate = async (): Promise<void> => {
     try {
-      console.log(route.params);
       const response = await getLastExtractionDateOfSleep();
       setData(response);
     } catch (error) {
@@ -68,6 +66,14 @@ export const Sleep: FC<SleepProps> = ({ route }) => {
       />
       <Button title="Last Date" onPress={onLastDate} />
       <Button title="Get Sleep Summary" onPress={onSleepSummary} />
+
+      {userID && (
+        <SleepTransmission
+          userID={userID}
+          setData={queue => setData(queue)}
+          date={date}
+        />
+      )}
 
       <JSONTree data={data} />
     </View>

@@ -1,1 +1,5 @@
-export { default as Brand } from './Brand/Brand';
+export { PhysicalTransmission } from './PhysicalTransmission';
+
+export { BodyTransmission } from './BodyTransmission';
+
+export { SleepTransmission } from './SleepTransmission';

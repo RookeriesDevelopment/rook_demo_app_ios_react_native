@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHBody } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { BodyTransmission } from '../components';
+import { useUser } from '../hooks/useUser';
 
 export const Body = () => {
+  const [userID, setUserID] = useState('');
   const [date, setDate] = useState('');
   const [data, setData] = useState<string | Map<string, any>>('');
 
   const { Fonts, Gutters } = useTheme();
+
+  const { checkUserID } = useUser({ user: 'example@example.com' });
+
+  useEffect(() => {
+    checkUserID()
+      .then(id => setUserID(id))
+      .catch(console.log);
+  }, []);
 
   const { ready, getLastExtractionDateOfBody, getBodySummary } =
     useRookAHBody();
@@ -55,6 +66,14 @@ export const Body = () => {
       />
       <Button title="Last Date" onPress={onLastDate} />
       <Button title="Get Body Summary" onPress={onBodySummary} />
+
+      {userID && (
+        <BodyTransmission
+          userID={userID}
+          setData={queue => setData(queue)}
+          date={date}
+        />
+      )}
 
       <JSONTree data={data} />
     </View>
