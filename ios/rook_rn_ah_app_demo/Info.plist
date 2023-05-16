@@ -35,6 +35,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This app requires access to your health and fitness data in order to track your workout</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This app requires permission to write workout data to HealthKit.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
@@ -51,9 +55,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-  <key>NSHealthShareUsageDescription</key>
-  <string>This app requires access to your health and fitness data in order to track your workout</string>
-  <key>NSHealthUpdateUsageDescription</key>
-  <string>This app requires permission to write workout data to HealthKit.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>

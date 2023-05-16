@@ -13,7 +13,7 @@ prepare_react_native_project!
 #   dependencies: {
 #     ...(process.env.NO_FLIPPER ? { 'react-native-flipper': { platforms: { ios: null } } } : {}),
 # ```
-flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
+#flipper_config = ENV['NO_FLIPPER'] == "1" ? FlipperConfiguration.disabled : FlipperConfiguration.enabled
 
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
@@ -38,11 +38,18 @@ target 'rook_rn_ah_app_demo' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-    :flipper_configuration => flipper_config,
+    #:flipper_configuration => flipper_config,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # Add the project and build configurations
+    project 'rook_rn_ah_app_demo',
+      'Dev.Debug' => :debug, # '{Build Configuration name}' => :{debug or release}
+      'Debug' => :debug,
+      'Dev.Release' => :release,
+      'Release' => :release
+  
   pod 'RookConnectTransmission'
 
   target 'rook_rn_ah_app_demoTests' do
@@ -50,6 +57,7 @@ target 'rook_rn_ah_app_demo' do
     # Pods for testing
   end
 
+  
   post_install do |installer|
     react_native_post_install(
       installer,
@@ -57,6 +65,7 @@ target 'rook_rn_ah_app_demo' do
       # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
     )
+    
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

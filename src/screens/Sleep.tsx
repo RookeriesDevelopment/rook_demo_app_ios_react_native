@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHSleep } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
@@ -17,13 +17,14 @@ export const Sleep = () => {
   const { ready, getLastExtractionDateOfSleep, getSleepSummary } =
     useRookAHSleep();
 
-  const { checkUserID } = useUser({ user: 'example@example.com' });
+  const user = useUser({ user: 'example@example.com' });
 
   useEffect(() => {
-    checkUserID()
+    user
+      .checkUserID()
       .then(id => setUserID(id))
       .catch(console.log);
-  }, []);
+  }, [user.ready]);
 
   const onLastDate = async (): Promise<void> => {
     try {
@@ -44,7 +45,7 @@ export const Sleep = () => {
   };
 
   return ready ? (
-    <View>
+    <ScrollView>
       <Text
         style={[
           Fonts.textPrimary,
@@ -76,7 +77,7 @@ export const Sleep = () => {
       )}
 
       <JSONTree data={data} />
-    </View>
+    </ScrollView>
   ) : (
     <Text>Loading</Text>
   );

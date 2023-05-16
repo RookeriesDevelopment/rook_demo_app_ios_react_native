@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useRookAHSleepTransmission } from 'react-native-rook-transmission';
+import { useRookAHSleepTransmission } from 'react-native-rook-ios-transmission';
 import { useRookAHPermissions, useRookAHSleep } from 'react-native-rook_ah';
 import { Button, View } from 'react-native';
 import object2Map from '../utils/object2Map';

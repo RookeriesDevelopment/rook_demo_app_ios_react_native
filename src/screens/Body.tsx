@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHBody } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
@@ -14,16 +14,17 @@ export const Body = () => {
 
   const { Fonts, Gutters } = useTheme();
 
-  const { checkUserID } = useUser({ user: 'example@example.com' });
-
-  useEffect(() => {
-    checkUserID()
-      .then(id => setUserID(id))
-      .catch(console.log);
-  }, []);
-
   const { ready, getLastExtractionDateOfBody, getBodySummary } =
     useRookAHBody();
+
+  const user = useUser({ user: 'example@example.com' });
+
+  useEffect(() => {
+    user
+      .checkUserID()
+      .then(id => setUserID(id))
+      .catch(console.log);
+  }, [user.ready]);
 
   const onLastDate = async (): Promise<void> => {
     try {
@@ -44,7 +45,7 @@ export const Body = () => {
   };
 
   return ready ? (
-    <View>
+    <ScrollView>
       <Text
         style={[
           Fonts.textPrimary,
@@ -76,7 +77,7 @@ export const Body = () => {
       )}
 
       <JSONTree data={data} />
-    </View>
+    </ScrollView>
   ) : (
     <Text>Loading</Text>
   );

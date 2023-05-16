@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, Text, Button, StyleSheet, TextInput } from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHPhysical } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
@@ -17,13 +17,14 @@ export const Physical = () => {
   const { ready, getLastExtractionDateOfPhysical, getPhysicalSummary } =
     useRookAHPhysical();
 
-  const { checkUserID } = useUser({ user: 'example@example.com' });
+  const user = useUser({ user: 'example@example.com' });
 
   useEffect(() => {
-    checkUserID()
+    user
+      .checkUserID()
       .then(id => setUserID(id))
       .catch(console.log);
-  }, []);
+  }, [user.ready]);
 
   const onLastDate = async (): Promise<void> => {
     try {
@@ -44,7 +45,7 @@ export const Physical = () => {
   };
 
   return ready ? (
-    <View>
+    <ScrollView>
       <Text
         style={[
           Fonts.textPrimary,
@@ -55,7 +56,7 @@ export const Physical = () => {
           Gutters.smallBMargin,
         ]}
       >
-        Body
+        Physical
       </Text>
 
       <TextInput
@@ -65,7 +66,7 @@ export const Physical = () => {
         onChangeText={text => setDate(text)}
       />
       <Button title="Last Date" onPress={onLastDate} />
-      <Button title="Get Body Summary" onPress={onPhysicalSummary} />
+      <Button title="Get Physical Summary" onPress={onPhysicalSummary} />
 
       {userID && (
         <PhysicalTransmission
@@ -76,7 +77,7 @@ export const Physical = () => {
       )}
 
       <JSONTree data={data} />
-    </View>
+    </ScrollView>
   ) : (
     <Text>Loading</Text>
   );

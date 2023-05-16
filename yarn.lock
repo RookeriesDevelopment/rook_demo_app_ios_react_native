@@ -2901,12 +2901,7 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
 
-cycle@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/cycle/-/cycle-1.0.3.tgz#21e80b2be8580f98b468f379430662b046c34ad2"
-  integrity sha512-TVF6svNzeQCOpjCqsy0/CSy8VgObG3wXusJ73xW2GbG5rGx7lC8zxDSURicsXI2UsGdi2L0QNRCi745/wUDvsA==
-
-dayjs@^1.8.15, dayjs@^1.8.29:
+dayjs@^1.8.15:
   version "1.11.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
   integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
@@ -6195,11 +6190,6 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-react-native-flipper@^0.182.0:
-  version "0.182.0"
-  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.182.0.tgz#7a2a5569715a9e571019e84ee2de4f72f4c5a4db"
-  integrity sha512-AoLVduVWluY99XDPznn05sXRyrE1OeEkc4aQCxDKgQYfCdf82aNOH+hwGO/CKcGEiC3T9oBzeOofqwo+Og4eWA==
-
 react-native-gesture-handler@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.9.0.tgz#2f63812e523c646f25b9ad660fc6f75948e51241"
@@ -6242,10 +6232,10 @@ react-native-reanimated@^3.0.2:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-rook-transmission@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-rook-transmission/-/react-native-rook-transmission-0.1.1.tgz#dd10e2878d4da1b361f9b594d2d9ee16ea1c8dd0"
-  integrity sha512-43QowJd7izsV37/w0uE47xk9oj5akjk2tWJcB+IDfOSs8MofkcGo3DUCm+Fu3sev0ZIoAX8H2Co9PbUHu6p5sg==
+react-native-rook-ios-transmission@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.1.3.tgz#55e5b575fc72a7b777241201cf42c9491862dcf9"
+  integrity sha512-N5EZ2mgSCQ/Mqeqvh29UhU+on/XMKb02yit4QiAhzqnS6QM5At4z9qxwyFTaDbPXlEWok4O9aa/PaY8155acVw==
   dependencies:
     rook_auth "^0.4.2"
 
@@ -6399,14 +6389,6 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
-
-redux-flipper@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/redux-flipper/-/redux-flipper-2.0.2.tgz#5deca22ef81e71253912fdf8a403f272db9ed27f"
-  integrity sha512-X6OD3+Ok8g0SunzrwS5OtbE735eBDxLz3uuK4fdJSwbAzskqOS3SWc+rKuOpqmLkt8pN+Szp7Nof9Etm75B1Rg==
-  dependencies:
-    cycle "^1.0.3"
-    dayjs "^1.8.29"
 
 redux-persist@^6.0.0:
   version "6.0.0"
@@ -6611,10 +6593,10 @@ rook_auth@^0.4.2:
     axios "^1.3.4"
     react-native-shared-preferences "^1.0.2"
 
-rook_users@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.1.4.tgz#afacdcdef224759b828b58739cec207dcf40a356"
-  integrity sha512-Ynsrt0UdFk6+FAefqEXIohkVj0eQccEUnBRYW82e0wDbq7o8mylz4I0hnsznT99PvLnQQzyBsGAGxjsN5uQMaA==
+rook_users@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.1.5.tgz#8b2f3c4183f5a9293d928e8c5a79b947fa219442"
+  integrity sha512-zpGGAybYa/YqY9T8DdUD51vFO7Ld44qopxyhw5+L3r1ZdzIW4A4sj0QZxsWl/hQ7W4NkrwaKoDx0caruqG+daA==
   dependencies:
     "@react-native-async-storage/async-storage" "^1.17.12"
     axios "^1.3.4"

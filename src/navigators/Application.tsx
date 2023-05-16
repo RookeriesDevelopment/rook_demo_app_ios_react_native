@@ -6,7 +6,6 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import { useTheme } from '../hooks';
-import { useFlipper } from '@react-navigation/devtools';
 import { Body, Example, Permissions, Sleep } from '../screens';
 import { Physical } from '../screens/Physical';
 
@@ -18,8 +17,6 @@ const ApplicationNavigator = () => {
   const { colors } = NavigationTheme;
 
   const navigationRef = useNavigationContainerRef();
-
-  useFlipper(navigationRef);
 
   return (
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Button, View } from 'react-native';
-import { useRookAHBodyTransmission } from 'react-native-rook-transmission';
+import { useRookAHBodyTransmission } from 'react-native-rook-ios-transmission';
 import { useRookAHPermissions, useRookAHBody } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 

@@ -6,9 +6,13 @@ type useUserProps = {
 };
 
 export const useUser = ({ user }: useUserProps) => {
-  const { getUserID, registerUser } = useRookUser();
+  const { ready, getUserID, registerUser } = useRookUser();
 
   const checkUserID = async (): Promise<string> => {
+    if (!ready) {
+      throw new Error('The hook is not ready');
+    }
+
     const saved = await getUserID();
 
     if (saved) {
@@ -24,6 +28,7 @@ export const useUser = ({ user }: useUserProps) => {
   };
 
   return {
+    ready,
     checkUserID,
   };
 };
