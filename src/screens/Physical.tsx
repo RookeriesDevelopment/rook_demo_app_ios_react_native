@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableWithoutFeedback,
+  ScrollView,
+} from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHPhysical } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { styles as global } from '../theme/styles/style';
 
 export const Physical = () => {
   const [date, setDate] = useState('');
@@ -33,7 +41,7 @@ export const Physical = () => {
   };
 
   return ready ? (
-    <View>
+    <ScrollView>
       <Text
         style={[
           Fonts.textPrimary,
@@ -44,7 +52,7 @@ export const Physical = () => {
           Gutters.smallBMargin,
         ]}
       >
-        Body
+        Physical
       </Text>
 
       <TextInput
@@ -53,17 +61,28 @@ export const Physical = () => {
         value={date}
         onChangeText={text => setDate(text)}
       />
-      <Button title="Last Date" onPress={onLastDate} />
-      <Button title="Get Body Summary" onPress={onPhysicalSummary} />
+      <TouchableWithoutFeedback onPress={onLastDate}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Last Date</Text>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={onPhysicalSummary}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Get Body Summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
 
-      <JSONTree data={data} />
-    </View>
+      <View style={styles.json}>
+        <JSONTree data={data} />
+      </View>
+    </ScrollView>
   ) : (
     <Text>Loading</Text>
   );
 };
 
 const styles = StyleSheet.create({
+  ...global,
   input: {
     marginTop: 10,
     paddingHorizontal: 10,

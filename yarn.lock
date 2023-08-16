@@ -6249,10 +6249,10 @@ react-native-rook-transmission@^0.1.1:
   dependencies:
     rook_auth "^0.4.2"
 
-react-native-rook_ah@^0.3.8:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.3.8.tgz#f8e63a0edb9703ed669838f454f647b9e299b5fd"
-  integrity sha512-Xji+1PV8tsQUWO0qo4PsZsCFl1Iq/WjGt/+kiRVP3klXPFQYk5JrcEvfgRevupAssml4qq1hl6e+d3w1ZJCRYQ==
+react-native-rook_ah@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.4.0.tgz#c026558785d2cfe77a12d3a7df9bb4f8df9f9cff"
+  integrity sha512-SFjq4I93fUYxL+PXZ/zFZ9InF1pM/bq7u4UObU88AMv1gpisNCb8d3LZ6Rzr7gdL6he2ZERMGS5+ubAkIBJWsA==
   dependencies:
     rook_auth "^0.4.2"
 
