@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, Button, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableWithoutFeedback,
+  ScrollView,
+} from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHPhysical } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { styles as global } from '../theme/styles/style';
 import { useUser } from '../hooks/useUser';
-import { PhysicalTransmission } from '../components';
 
 export const Physical = () => {
   const [userID, setUserID] = useState('');
@@ -65,18 +72,20 @@ export const Physical = () => {
         value={date}
         onChangeText={text => setDate(text)}
       />
-      <Button title="Last Date" onPress={onLastDate} />
-      <Button title="Get Physical Summary" onPress={onPhysicalSummary} />
+      <TouchableWithoutFeedback onPress={onLastDate}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Last Date</Text>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={onPhysicalSummary}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Get Body Summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
 
-      {userID && (
-        <PhysicalTransmission
-          userID={userID}
-          setData={queue => setData(queue)}
-          date={date}
-        />
-      )}
-
-      <JSONTree data={data} />
+      <View style={styles.json}>
+        <JSONTree data={data} />
+      </View>
     </ScrollView>
   ) : (
     <Text>Loading</Text>
@@ -84,6 +93,7 @@ export const Physical = () => {
 };
 
 const styles = StyleSheet.create({
+  ...global,
   input: {
     marginTop: 10,
     paddingHorizontal: 10,

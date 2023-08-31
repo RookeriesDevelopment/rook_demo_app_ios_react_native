@@ -6,7 +6,7 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import { useTheme } from '../hooks';
-import { Body, Example, Permissions, Sleep } from '../screens';
+import { Body, Events, Example, Permissions, Sleep } from '../screens';
 import { Physical } from '../screens/Physical';
 
 const Stack = createStackNavigator();
@@ -28,6 +28,7 @@ const ApplicationNavigator = () => {
           <Stack.Screen name="Sleep" component={Sleep} />
           <Stack.Screen name="Body" component={Body} />
           <Stack.Screen name="Physical" component={Physical} />
+          <Stack.Screen name="Events" component={Events} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

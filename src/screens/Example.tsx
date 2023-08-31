@@ -1,29 +1,27 @@
+import { Link } from '@react-navigation/native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Button, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { styles } from '../theme/styles/style';
 
 const Example = () => {
-  const navigation = useNavigation();
-
   return (
-    <View>
-      <Button
-        title="Permissions"
-        onPress={() => navigation.navigate('Permissions' as never, {} as never)}
-      />
-      <Button
-        title="Sleep"
-        onPress={() => navigation.navigate('Sleep' as never, {} as never)}
-      />
-      <Button
-        title="Body"
-        onPress={() => navigation.navigate('Body' as never, {} as never)}
-      />
-      <Button
-        title="Physical"
-        onPress={() => navigation.navigate('Physical' as never, {} as never)}
-      />
-    </View>
+    <SafeAreaView>
+      <Link to={{ screen: 'Permissions' }} style={styles.button}>
+        Permissions
+      </Link>
+      <Link to={{ screen: 'Body' }} style={styles.button}>
+        Body
+      </Link>
+      <Link to={{ screen: 'Physical' }} style={styles.button}>
+        Physical
+      </Link>
+      <Link to={{ screen: 'Sleep' }} style={styles.button}>
+        Sleep
+      </Link>
+      <Link to={{ screen: 'Events' }} style={styles.button}>
+        Events
+      </Link>
+    </SafeAreaView>
   );
 };
 

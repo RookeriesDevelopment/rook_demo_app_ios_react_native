@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRookAHPermissions } from 'react-native-rook_ah';
-import { Button, View, Text } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { useTheme } from '../hooks';
+import { styles } from '../theme/styles/style';
 
 export const Permissions = () => {
   const { Fonts, Gutters } = useTheme();
@@ -42,10 +43,30 @@ export const Permissions = () => {
       >
         Permissions
       </Text>
-      <Button title="Sleep Permissions" onPress={onSleepPermissions} />
-      <Button title="Physical Permissions" onPress={onPhysicalPermissions} />
-      <Button title="Body Permissions" onPress={onBodyPermissions} />
-      <Button title="All Permissions" onPress={onAllPermissions} />
+
+      <TouchableWithoutFeedback onPress={onSleepPermissions}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Sleep Permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={onPhysicalPermissions}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Physical Permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={onBodyPermissions}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Body Permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={onAllPermissions}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>All Permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
     </View>
   );
 };

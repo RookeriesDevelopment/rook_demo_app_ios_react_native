@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, Text, Button, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import { useTheme } from '../hooks';
 import { useRookAHSleep } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
+import { styles as global } from '../theme/styles/style';
 import { useUser } from '../hooks/useUser';
-import { SleepTransmission } from '../components';
 
 export const Sleep = () => {
   const [userID, setUserID] = useState('');
@@ -65,18 +72,21 @@ export const Sleep = () => {
         value={date}
         onChangeText={text => setDate(text)}
       />
-      <Button title="Last Date" onPress={onLastDate} />
-      <Button title="Get Sleep Summary" onPress={onSleepSummary} />
+      <TouchableWithoutFeedback onPress={onLastDate}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Last Date</Text>
+        </View>
+      </TouchableWithoutFeedback>
 
-      {userID && (
-        <SleepTransmission
-          userID={userID}
-          setData={queue => setData(queue)}
-          date={date}
-        />
-      )}
+      <TouchableWithoutFeedback onPress={onSleepSummary}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Get Sleep Summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
 
-      <JSONTree data={data} />
+      <View style={styles.json}>
+        <JSONTree data={data} />
+      </View>
     </ScrollView>
   ) : (
     <Text>Loading</Text>
@@ -84,6 +94,7 @@ export const Sleep = () => {
 };
 
 const styles = StyleSheet.create({
+  ...global,
   input: {
     marginTop: 10,
     paddingHorizontal: 10,
