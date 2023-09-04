@@ -1,21 +1,8 @@
 # Directory
 
-Repositories for Rook connect
+This is an demo app for Apple Health, iOS and Rook
 
-- Apple Health:
-  - [Dev and package](git@bitbucket.org:Javier98/rook_bob_ah.git)
-  - [App demo](git@bitbucket.org:Javier98/rook_rn_ah_app_demo.git)
-- Health Connect
-  - [Dev and package](git@bitbucket.org:rookmotion-reactnative/rook-health-connect-bob.git)
-  - [App demo](git@bitbucket.org:Javier98/rook_rn_app_demo_hc.git)
-- Transmission
-  - [Dev and package of iOS](git@bitbucket.org:Javier98/rook_transmission_bob.git)
-  - [App demo iOS - branch transmission](git@bitbucket.org:Javier98/rook_rn_app_demo_hc.git)
-  - [Dev and package of android](git@bitbucket.org:Javier98/rook-android-transmission-bob.git)
-  - [App demo android - branch transmission](git@bitbucket.org:Javier98/rook_rn_app_demo_hc.git)
-- User
-  - [Package](git@bitbucket.org:Javier98/rook_users.git)
-  - [Dev](git@bitbucket.org:Javier98/rookuserdev.git)
+- [Oficial documentation](https://docs.tryrook.io)
 
 # Usage of this project
 

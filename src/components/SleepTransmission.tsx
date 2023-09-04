@@ -1,20 +1,23 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useRookAHSleepTransmission } from 'react-native-rook-ios-transmission';
 import { useRookAHPermissions, useRookAHSleep } from 'react-native-rook_ah';
-import { Button, View } from 'react-native';
-import object2Map from '../utils/object2Map';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
+import { styles } from '../theme/styles/style';
+import { useTheme } from '../hooks';
 
 type SleepTransmissionProps = {
   userID: string;
   date: string;
-  setData: (data: string | Map<string, any>) => void;
 };
 
 export const SleepTransmission: FC<SleepTransmissionProps> = ({
   userID,
   date,
-  setData,
 }) => {
+  const [response, setResponse] = useState('');
+
+  const { Fonts, Gutters } = useTheme();
+
   const { saveSleepSummary, getSleepSummariesStored, uploadSleepSummaries } =
     useRookAHSleepTransmission({ userID });
 
@@ -30,36 +33,71 @@ export const SleepTransmission: FC<SleepTransmissionProps> = ({
     try {
       const summary = await getSleepSummary(date);
       await saveSleepSummary(summary);
-      setData('Summary saved');
+      setResponse('Summary saved');
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   const handleGetQueue = async (): Promise<void> => {
     try {
       const result = await getSleepSummariesStored();
-      setData(object2Map(result));
+      setResponse(`The queue has: ${result.length} queued`);
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   const handleUploadQueue = async (): Promise<void> => {
     try {
+      setResponse('Loading...');
       const result = await uploadSleepSummaries();
-      setData(`Queue uploaded: ${result}`);
+      setResponse(`Queue uploaded: ${result}`);
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   return (
     <View>
-      <Button title="Request sleep permissions" onPress={requestPermission} />
-      <Button title="Enqueue sleep summary" onPress={handleEnqueueSleep} />
-      <Button title="Get Enqueue" onPress={handleGetQueue} />
-      <Button title="Upload Enqueue" onPress={handleUploadQueue} />
+      <TouchableWithoutFeedback onPress={requestPermission}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Request sleep permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleEnqueueSleep}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Enqueue sleep summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleGetQueue}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Get Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleUploadQueue}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Upload Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <View style={styles.json}>
+        <Text
+          style={[
+            Fonts.textPrimary,
+            Fonts.textBold,
+            Fonts.textRegular,
+            Fonts.textCenter,
+            Gutters.smallTMargin,
+            Gutters.smallBMargin,
+          ]}
+        >
+          {response}
+        </Text>
+      </View>
     </View>
   );
 };

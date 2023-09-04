@@ -1,20 +1,23 @@
-import React, { FC } from 'react';
-import { Button, View } from 'react-native';
+import React, { FC, useState } from 'react';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { useRookAHPhysicalTransmission } from 'react-native-rook-ios-transmission';
 import { useRookAHPermissions, useRookAHPhysical } from 'react-native-rook_ah';
-import object2Map from '../utils/object2Map';
+import { styles } from '../theme/styles/style';
+import { useTheme } from '../hooks';
 
 type PhysicalTransmissionProps = {
   userID: string;
   date: string;
-  setData: (data: string | Map<string, any>) => void;
 };
 
 export const PhysicalTransmission: FC<PhysicalTransmissionProps> = ({
   userID,
   date,
-  setData,
 }) => {
+  const [response, setResponse] = useState('');
+
+  const { Fonts, Gutters } = useTheme();
+
   const {
     enqueuePhysicalSummary,
     getPhysicalSummariesStored,
@@ -29,43 +32,76 @@ export const PhysicalTransmission: FC<PhysicalTransmissionProps> = ({
     await requestPhysicalPermissions();
   };
 
-  const handleEnqueueSleep = async (): Promise<void> => {
+  const handleEnqueuePhysical = async (): Promise<void> => {
     try {
       const summary = await getPhysicalSummary(date);
-      await enqueuePhysicalSummary(date, summary);
-      setData('Summary saved');
+      await enqueuePhysicalSummary(summary);
+      setResponse('Summary saved');
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   const handleGetQueue = async (): Promise<void> => {
     try {
+      setResponse('Loading...');
       const result = await getPhysicalSummariesStored();
-      setData(object2Map(result));
+      setResponse(`The queue has: ${result.length} queued`);
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   const handleUploadQueue = async (): Promise<void> => {
     try {
+      setResponse('Loading...');
       const result = await uploadPhysicalSummaries();
-      setData(`Queue uploaded: ${result}`);
+      setResponse(`Queue uploaded: ${result}`);
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   return (
     <View>
-      <Button
-        title="Request Physical permissions"
-        onPress={requestPermission}
-      />
-      <Button title="Enqueue Physical summary" onPress={handleEnqueueSleep} />
-      <Button title="Get Enqueue" onPress={handleGetQueue} />
-      <Button title="Upload Enqueue" onPress={handleUploadQueue} />
+      <TouchableWithoutFeedback onPress={requestPermission}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Request Physical permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleEnqueuePhysical}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Enqueue Physical summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleGetQueue}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Get Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleUploadQueue}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Upload Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <View style={styles.json}>
+        <Text
+          style={[
+            Fonts.textPrimary,
+            Fonts.textBold,
+            Fonts.textRegular,
+            Fonts.textCenter,
+            Gutters.smallTMargin,
+            Gutters.smallBMargin,
+          ]}
+        >
+          {response}
+        </Text>
+      </View>
     </View>
   );
 };

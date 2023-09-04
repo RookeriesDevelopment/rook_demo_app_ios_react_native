@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -12,10 +12,8 @@ import { useRookAHSleep } from 'react-native-rook_ah';
 import object2Map from '../utils/object2Map';
 import JSONTree from 'react-native-json-tree';
 import { styles as global } from '../theme/styles/style';
-import { useUser } from '../hooks/useUser';
 
 export const Sleep = () => {
-  const [userID, setUserID] = useState('');
   const [date, setDate] = useState('');
   const [data, setData] = useState<string | Map<string, any>>('');
 
@@ -23,15 +21,6 @@ export const Sleep = () => {
 
   const { ready, getLastExtractionDateOfSleep, getSleepSummary } =
     useRookAHSleep();
-
-  const user = useUser({ user: 'example@example.com' });
-
-  useEffect(() => {
-    user
-      .checkUserID()
-      .then(id => setUserID(id))
-      .catch(console.log);
-  }, [user.ready]);
 
   const onLastDate = async (): Promise<void> => {
     try {

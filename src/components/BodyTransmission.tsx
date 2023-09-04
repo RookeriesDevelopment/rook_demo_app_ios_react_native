@@ -1,24 +1,28 @@
-import React, { FC } from 'react';
-import { Button, View } from 'react-native';
+import React, { FC, useState } from 'react';
+import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import { useRookAHBodyTransmission } from 'react-native-rook-ios-transmission';
 import { useRookAHPermissions, useRookAHBody } from 'react-native-rook_ah';
-import object2Map from '../utils/object2Map';
+import { styles } from '../theme/styles/style';
+import { useTheme } from '../hooks';
 
 type BodyTransmissionProps = {
   userID: string;
   date: string;
-  setData: (data: string | Map<string, any>) => void;
 };
 
 export const BodyTransmission: FC<BodyTransmissionProps> = ({
   userID,
   date,
-  setData,
 }) => {
-  const { enqueueBodySummary, getBodySummariesStored, uploadBodySummaries } =
-    useRookAHBodyTransmission({
+  const [response, setResponse] = useState('');
+
+  const { Fonts, Gutters } = useTheme();
+
+  const { enqueueBodySummary, uploadBodySummaries } = useRookAHBodyTransmission(
+    {
       userID,
-    });
+    },
+  );
   const { requestBodyPermissions } = useRookAHPermissions();
   const { getBodySummary } = useRookAHBody();
 
@@ -26,40 +30,60 @@ export const BodyTransmission: FC<BodyTransmissionProps> = ({
     await requestBodyPermissions();
   };
 
-  const handleEnqueueSleep = async (): Promise<void> => {
+  const handleEnqueueBody = async (): Promise<void> => {
     try {
       const summary = await getBodySummary(date);
-      await enqueueBodySummary(date, summary);
-      setData('Summary saved');
+      await enqueueBodySummary(summary);
+      setResponse('Summary saved');
     } catch (error) {
-      setData(object2Map(error as object));
-    }
-  };
-
-  const handleGetQueue = async (): Promise<void> => {
-    try {
-      const result = await getBodySummariesStored();
-      setData(object2Map(result));
-    } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   const handleUploadQueue = async (): Promise<void> => {
     try {
+      setResponse('Loading...');
       const result = await uploadBodySummaries();
-      setData(`Queue uploaded: ${result}`);
+      setResponse(`Queue uploaded: ${result}`);
     } catch (error) {
-      setData(object2Map(error as object));
+      setResponse(`${error}`);
     }
   };
 
   return (
-    <View>
-      <Button title="Request Body permissions" onPress={requestPermission} />
-      <Button title="Enqueue Body summary" onPress={handleEnqueueSleep} />
-      <Button title="Get Enqueue" onPress={handleGetQueue} />
-      <Button title="Upload Enqueue" onPress={handleUploadQueue} />
+    <View style={styles.mt}>
+      <TouchableWithoutFeedback onPress={requestPermission}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Request Body permissions</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleEnqueueBody}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Enqueue Body summary</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleUploadQueue}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Upload Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <View style={styles.json}>
+        <Text
+          style={[
+            Fonts.textPrimary,
+            Fonts.textBold,
+            Fonts.textRegular,
+            Fonts.textCenter,
+            Gutters.smallTMargin,
+            Gutters.smallBMargin,
+          ]}
+        >
+          {response}
+        </Text>
+      </View>
     </View>
   );
 };

@@ -6232,10 +6232,17 @@ react-native-reanimated@^3.0.2:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-rook-ios-transmission@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.1.3.tgz#55e5b575fc72a7b777241201cf42c9491862dcf9"
-  integrity sha512-N5EZ2mgSCQ/Mqeqvh29UhU+on/XMKb02yit4QiAhzqnS6QM5At4z9qxwyFTaDbPXlEWok4O9aa/PaY8155acVw==
+react-native-rook-ios-transmission@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.3.0.tgz#bb5b515e144f27e194b93775377e31acf40d1035"
+  integrity sha512-Xg0VPdJAncg0FoqIfdGRil1+z+ceNc84A2Jm10ya3VkXfmB/eOk0dLLeqVAGKkOEzpqh2dFfi2LizvWu2lh2hw==
+  dependencies:
+    rook_auth "^0.4.2"
+
+react-native-rook-transmission@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-rook-transmission/-/react-native-rook-transmission-0.1.1.tgz#dd10e2878d4da1b361f9b594d2d9ee16ea1c8dd0"
+  integrity sha512-43QowJd7izsV37/w0uE47xk9oj5akjk2tWJcB+IDfOSs8MofkcGo3DUCm+Fu3sev0ZIoAX8H2Co9PbUHu6p5sg==
   dependencies:
     rook_auth "^0.4.2"
 

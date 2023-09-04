@@ -4,6 +4,9 @@ export const styles = StyleSheet.create({
   text: {
     color: 'black',
   },
+  mt: {
+    marginTop: 10,
+  },
   bg: {
     backgroundColor: '#171821',
     flex: 1,
@@ -53,5 +56,16 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 10,
     fontFamily: 'System',
+  },
+  input: {
+    marginTop: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    marginHorizontal: '5%',
+    borderColor: 'white',
+    color: 'white',
+    borderWidth: 1,
+    borderRadius: 5,
+    fontSize: 16,
   },
 });

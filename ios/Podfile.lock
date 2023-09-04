@@ -275,9 +275,9 @@ PODS:
   - react-native-rook-ah (0.4.2):
     - React-Core
     - RookAppleHealth (= 1.0.10)
-  - react-native-rook-transmission (0.1.1):
+  - react-native-rook-transmission (0.3.0):
     - React-Core
-    - RookConnectTransmission (= 1.0.3)
+    - RookConnectTransmission (= 1.0.8)
   - react-native-safe-area-context (4.5.0):
     - RCT-Folly
     - RCTRequired
@@ -405,7 +405,7 @@ PODS:
     - React-Core
     - React-RCTImage
   - RookAppleHealth (1.0.10)
-  - RookConnectTransmission (1.0.3)
+  - RookConnectTransmission (1.0.8)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -580,7 +580,7 @@ SPEC CHECKSUMS:
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-mmkv: ebf4ca42eb4e3e6d37800bb5c94bce4956b6e1e6
   react-native-rook-ah: cfa08318194214933a41031ab6c8bb25d5b3b6d0
-  react-native-rook-transmission: 10222c6ac806326975c8bdc5e4119920540542dc
+  react-native-rook-transmission: 580bfb28afe526b585af46798f362e250a50d72b
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
   React-RCTActionSheet: bfd675a10f06a18728ea15d82082d48f228a213a
@@ -601,7 +601,7 @@ SPEC CHECKSUMS:
   RNReanimated: f0dd6b881808e635ef0673f89642937d6c141314
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RookAppleHealth: 43df0af347de2499b985717f4ebd112299b11a78
-  RookConnectTransmission: 35e47d93c46b009ca0e7c7e4bf798a73f74e3f45
+  RookConnectTransmission: 987fc8bfcb5382c49a7f4cbfd8501107dd8809d8
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
 
 PODFILE CHECKSUM: c43644ac3e84dcb8f46d3f3ef4627195214403ab
