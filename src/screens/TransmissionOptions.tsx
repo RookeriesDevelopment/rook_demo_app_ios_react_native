@@ -41,6 +41,11 @@ export const TransmissionOptions = () => {
           <Text style={styles.buttonText}>Events</Text>
         </Link>
       </View>
+      <View style={styles.button}>
+        <Link to={{ screen: 'Timezone Transmission' }}>
+          <Text style={styles.buttonText}>Update Timezone</Text>
+        </Link>
+      </View>
     </SafeAreaView>
   );
 };

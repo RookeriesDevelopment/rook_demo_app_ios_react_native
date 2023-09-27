@@ -18,6 +18,7 @@ import {
   PhysicalTransmissionScreen,
   SleepTransmissionScreen,
   EventsTransmissionScreen,
+  TimezoneTransmissionScreen,
 } from '../screens';
 import { Physical } from '../screens/Physical';
 
@@ -64,6 +65,11 @@ const ApplicationNavigator = () => {
           <Stack.Screen
             name="Events Transmission"
             component={EventsTransmissionScreen}
+          />
+
+          <Stack.Screen
+            name="Timezone Transmission"
+            component={TimezoneTransmissionScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

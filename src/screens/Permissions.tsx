@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRookAHPermissions } from 'react-native-rook_ah';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { useTheme } from '../hooks';
 import { styles } from '../theme/styles/style';
 
 export const Permissions = () => {
+  const [timezone, setTimezone] = useState('');
+
   const { Fonts, Gutters } = useTheme();
+
   const {
     requestSleepPermissions,
     requestPhysicalPermissions,
     requestBodyPermissions,
     requestAllPermissions,
+    getUserTimeZone,
   } = useRookAHPermissions();
 
   const onSleepPermissions = async (): Promise<void> => {
@@ -29,21 +33,13 @@ export const Permissions = () => {
     await requestAllPermissions();
   };
 
+  const onTimezone = async (): Promise<void> => {
+    const r = await getUserTimeZone();
+    setTimezone(JSON.stringify(r));
+  };
+
   return (
     <View>
-      <Text
-        style={[
-          Fonts.textPrimary,
-          Fonts.textBold,
-          Fonts.textRegular,
-          Fonts.textCenter,
-          Gutters.smallTMargin,
-          Gutters.smallBMargin,
-        ]}
-      >
-        Permissions
-      </Text>
-
       <TouchableWithoutFeedback onPress={onSleepPermissions}>
         <View style={styles.buttonTouch}>
           <Text style={styles.buttonText}>Sleep Permissions</Text>
@@ -67,6 +63,16 @@ export const Permissions = () => {
           <Text style={styles.buttonText}>All Permissions</Text>
         </View>
       </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={onTimezone}>
+        <View style={styles.buttonTouch}>
+          <Text style={styles.buttonText}>Get TimeZone</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <Text style={[Fonts.textCenter, Fonts.textPrimary, Gutters.smallTMargin]}>
+        {timezone}
+      </Text>
     </View>
   );
 };

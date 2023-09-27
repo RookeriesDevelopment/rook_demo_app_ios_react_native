@@ -8,4 +8,5 @@ export { Permissions } from './Permissions';
 export { PhysicalTransmissionScreen } from './PhysicalTransmissionScreen';
 export { Sleep } from './Sleep';
 export { SleepTransmissionScreen } from './SleepTransmissionScreen';
+export { TimezoneTransmissionScreen } from './TimezoneTransmissionScreen';
 export { TransmissionOptions } from './TransmissionOptions';
