@@ -12,7 +12,11 @@ import { styles as global } from '../theme/styles/style';
 
 export const UpdateUserID = () => {
   const [userID, setUserID] = useState('');
-  const { checkUserID, updateUser } = useUser();
+  const { checkUserID, updateUser, ready } = useUser();
+
+  useEffect(() => {
+    console.log(ready);
+  }, [ready]);
 
   useEffect(() => {
     checkUserID()
@@ -29,16 +33,19 @@ export const UpdateUserID = () => {
   const handleButtonPress = async (): Promise<void> => {
     if (userID.trim() === '') {
       Alert.alert('Alerta', 'Enter a valid user ID (number or string)', [
-        { text: 'OK', onPress: () => console.log('OK Pressed') },
+        { text: 'OK' },
       ]);
       return;
     }
 
-    await updateUser({ user: userID });
+    try {
+      await updateUser({ user: userID });
 
-    Alert.alert('Success', 'Changed successfully', [
-      { text: 'OK', onPress: () => console.log('OK Pressed') },
-    ]);
+      Alert.alert('Success', 'Changed successfully', [{ text: 'OK' }]);
+    } catch (error) {
+      console.log(error);
+      Alert.alert('Error', '', [{ text: 'OK' }]);
+    }
   };
 
   return (

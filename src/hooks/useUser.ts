@@ -6,7 +6,7 @@ type useUserProps = {
 };
 
 export const useUser = () => {
-  const { getUserID, registerUser } = useRookUser();
+  const { getUserID, registerUser, ready } = useRookUser();
 
   const checkUserID = async (): Promise<string> => {
     const saved = await getUserID();
@@ -28,6 +28,7 @@ export const useUser = () => {
   };
 
   return {
+    ready,
     checkUserID,
     updateUser,
   };

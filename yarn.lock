@@ -1437,7 +1437,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.17.11", "@react-native-async-storage/async-storage@^1.17.12", "@react-native-async-storage/async-storage@^1.18.1":
+"@react-native-async-storage/async-storage@^1.17.11", "@react-native-async-storage/async-storage@^1.18.1":
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.18.1.tgz#b1aea4f07fb1dba3325b857b770671517ddab221"
   integrity sha512-70aFW8fVCKl+oA1AKPFDpE6s4t9pulj2QeLX+MabEmzfT3urd/3cckv45WJvtocdoIH/oXA3Y+YcCRJCcNa8mA==
@@ -2048,6 +2048,14 @@
     "@typescript-eslint/types" "5.53.0"
     eslint-visitor-keys "^3.3.0"
 
+"@xstate/react@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@xstate/react/-/react-3.2.2.tgz#ddf0f9d75e2c19375b1e1b7335e72cb99762aed8"
+  integrity sha512-feghXWLedyq8JeL13yda3XnHPZKwYDN5HPBLykpLeuNpr9178tQd2/3d0NrH6gSd0sG5mLuLeuD+ck830fgzLQ==
+  dependencies:
+    use-isomorphic-layout-effect "^1.1.2"
+    use-sync-external-store "^1.0.0"
+
 abort-controller@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/abort-controller/-/abort-controller-3.0.0.tgz#eaf54d53b62bae4138e809ca225c8439a6efb392"
@@ -2271,6 +2279,15 @@ axios@^1.3.4:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
   integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
+axios@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.5.1.tgz#11fbaa11fc35f431193a9564109c88c1f27b585f"
+  integrity sha512-Q28iYCWzNHjAm+yEAot5QaAMxhMghWLFVf7rRdwhUI+c2jix2DUXjAHXVi+s1ibs3mjPO/cCgbA++3BjD0vP/A==
   dependencies:
     follow-redirects "^1.15.0"
     form-data "^4.0.0"
@@ -6214,10 +6231,10 @@ react-native-json-tree@^1.3.0:
     prop-types "^15.7.2"
     react-base16-styling "^0.8.0"
 
-react-native-mmkv@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-2.6.2.tgz#bada94035fbec37494409ab83a24fcbc68ecd2d3"
-  integrity sha512-jYvOYohzwMoNBT6QI8oy4+D4JMYK+j2bnuLzr2koYjigoHsSl3TXfaCt0eErbrFIbBazP1V9j2jqACVwvPgLgA==
+react-native-mmkv@^2.10.2:
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/react-native-mmkv/-/react-native-mmkv-2.10.2.tgz#73f06bb710388f67bade031e7b8e42a6d2358e40"
+  integrity sha512-hNrZzwvIFyogJkqf//rVSw7EwceYqkx/jl3hb5tzct6qqwEmS1L9ybvnDjzDkaMyDeouQIqAnsdnb6AuDSrgQQ==
 
 react-native-reanimated@^3.0.2:
   version "3.0.2"
@@ -6232,19 +6249,31 @@ react-native-reanimated@^3.0.2:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-rook-ios-transmission@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.4.0.tgz#508dd9a5ba0e144dbe216b32636723e3039cded4"
-  integrity sha512-oUJMnRY8qd4FUZFJf2395mmUwXAZmInvyDL/tD9L17+qT1K2szj0N2C5AX/0on4lv6IKutAp1ZEqLqaAEf9hEg==
+react-native-rook-ios-transmission@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.5.2.tgz#e9398f8a7cb980e8bbf604277280be03baa91d5f"
+  integrity sha512-U03jvQ36YoC9Jk1a3z4shdlMBxWnkqe4g4kNCalOVOf9hv1dJY8sEY75KIemS9y6Ya5J2sXJHCiGc6eyqxqwGQ==
   dependencies:
-    rook_auth "^0.4.2"
+    react-native-rook-logger-react-native "^0.2.8"
+    rook_auth "^0.6.0"
 
-react-native-rook_ah@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.5.0.tgz#6b1f9168bb95b15c6a84296de3060a3fdd49670e"
-  integrity sha512-+Fi9+FYzkK3IxpcCIfgMQbHHZGzbNMCpY5c4rJqS34GVn6NqBJUa80CRuvqLQ4kcFuUJtS4sqgFv28cnixh3Pg==
+react-native-rook-logger-react-native@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/react-native-rook-logger-react-native/-/react-native-rook-logger-react-native-0.2.8.tgz#7509cd4ebcbde9368facfea75b191b99b0663c2e"
+  integrity sha512-V4SzLEPp1K1h1s0A/PoX/hXjVtvdRMlUkDRpq6iT+182oDG0hUhuaTIOcmsKFrp+7aMpoUTMCX5OShjN4Qb20Q==
   dependencies:
-    rook_auth "^0.4.2"
+    "@xstate/react" "^3.2.2"
+    axios "^1.5.1"
+    rook_auth "^0.5.2"
+    xstate "^4.38.2"
+
+react-native-rook_ah@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.6.6.tgz#ecd3028ddc782bff19f3b9c1483061b595d6f0ef"
+  integrity sha512-1f6VDdDLvr5Ej1h4I4A7AJqHmAR/wQUwXStyJ7AJHcick6tvcatFvBvkh2VjWpIeLvTeV7iTbdvL+/pHT31Pdg==
+  dependencies:
+    react-native-rook-logger-react-native "^0.2.8"
+    rook_auth "^0.6.0"
 
 react-native-safe-area-context@^4.5.0:
   version "4.5.0"
@@ -6584,23 +6613,32 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rook_auth@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/rook_auth/-/rook_auth-0.4.2.tgz#28126f10bd4df01d83354c03512680d0666fee58"
-  integrity sha512-76Iy5mUtLbxlFqr9gC26crfhRAHbZObq64DM28/Bl9IK6pI4n6YSZormzqWUedD9ZFzlDSDwhz/FEjaTxS3BNQ==
+rook_auth@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/rook_auth/-/rook_auth-0.5.2.tgz#1cdadfc8b5207042f1716617ae2c8714db274ba5"
+  integrity sha512-2nQK5iQWRLUZF+Axq8pO/WYJWSoyw+KQqfuJSR78sdTlOal0mFdvdWs/RElLyPrFV6b0nLVCpZFhqA6nyBdTVA==
   dependencies:
     "@react-native-async-storage/async-storage" "^1.17.11"
     axios "^1.3.4"
     react-native-shared-preferences "^1.0.2"
 
-rook_users@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.1.5.tgz#8b2f3c4183f5a9293d928e8c5a79b947fa219442"
-  integrity sha512-zpGGAybYa/YqY9T8DdUD51vFO7Ld44qopxyhw5+L3r1ZdzIW4A4sj0QZxsWl/hQ7W4NkrwaKoDx0caruqG+daA==
+rook_auth@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/rook_auth/-/rook_auth-0.6.0.tgz#d420fa4691df72fc21999b3b70238a4bf2550b28"
+  integrity sha512-yVL8rqmfgFhBwbBSgMJk/D+SWs7QjFW+sBNM8ekE8lLiQGcvqLFKajXnGcRsmygOwagM0jdiBs3p0HBrGk++dQ==
   dependencies:
-    "@react-native-async-storage/async-storage" "^1.17.12"
+    "@react-native-async-storage/async-storage" "^1.17.11"
     axios "^1.3.4"
-    rook_auth "^0.4.2"
+    react-native-shared-preferences "^1.0.2"
+
+rook_users@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.3.1.tgz#b089c447287eba0c3f6aecb69e59d6ce6be957a5"
+  integrity sha512-stU6bZB2O5Hoj2dlKUGYj3jlRHsNDs/iMGgV6zSG+zPLF0etU+fjqX8O+QCvcRQ7+lhFNi0rmf0fT4UBXpxdiA==
+  dependencies:
+    axios "^1.3.4"
+    react-native-mmkv "^2.10.2"
+    rook_auth "^0.6.0"
 
 run-parallel@^1.1.9:
   version "1.2.0"
@@ -7338,6 +7376,11 @@ urix@^0.1.0:
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha512-Am1ousAhSLBeB9cG/7k7r2R0zj50uDRlZHPGbazid5s9rlF1F/QKYObEKSIunSjIOkJZqwRRLpvewjEkM7pSqg==
 
+use-isomorphic-layout-effect@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.2.tgz#497cefb13d863d687b08477d9e5a164ad8c1a6fb"
+  integrity sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==
+
 use-latest-callback@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/use-latest-callback/-/use-latest-callback-0.1.5.tgz#a4a836c08fa72f6608730b5b8f4bbd9c57c04f51"
@@ -7532,6 +7575,11 @@ ws@^7, ws@^7.5.1:
   version "7.5.9"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.9.tgz#54fa7db29f4c7cec68b1ddd3a89de099942bb591"
   integrity sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==
+
+xstate@^4.38.2:
+  version "4.38.2"
+  resolved "https://registry.yarnpkg.com/xstate/-/xstate-4.38.2.tgz#1b74544fc9c8c6c713ba77f81c6017e65aa89804"
+  integrity sha512-Fba/DwEPDLneHT3tbJ9F3zafbQXszOlyCJyQqqdzmtlY/cwE2th462KK48yaANf98jHlP6lJvxfNtN0LFKXPQg==
 
 xtend@~4.0.1:
   version "4.0.2"
