@@ -6249,10 +6249,10 @@ react-native-reanimated@^3.0.2:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-rook-ios-transmission@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.5.2.tgz#e9398f8a7cb980e8bbf604277280be03baa91d5f"
-  integrity sha512-U03jvQ36YoC9Jk1a3z4shdlMBxWnkqe4g4kNCalOVOf9hv1dJY8sEY75KIemS9y6Ya5J2sXJHCiGc6eyqxqwGQ==
+react-native-rook-ios-transmission@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.5.5.tgz#8758cbe6c09c3f09617b0a42a78a1c1e91d49fcd"
+  integrity sha512-xEbV7gcUpFOHnl3h0Ys4l8vWEa4C3bQt9li+7RRCeXC0dewcsgdYFRE+3jo2xB3wrTH5HSg17u+cgNc8cKtOxQ==
   dependencies:
     react-native-rook-logger-react-native "^0.2.8"
     rook_auth "^0.6.0"
@@ -6267,10 +6267,10 @@ react-native-rook-logger-react-native@^0.2.8:
     rook_auth "^0.5.2"
     xstate "^4.38.2"
 
-react-native-rook_ah@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.6.6.tgz#ecd3028ddc782bff19f3b9c1483061b595d6f0ef"
-  integrity sha512-1f6VDdDLvr5Ej1h4I4A7AJqHmAR/wQUwXStyJ7AJHcick6tvcatFvBvkh2VjWpIeLvTeV7iTbdvL+/pHT31Pdg==
+react-native-rook_ah@^0.6.10:
+  version "0.6.10"
+  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.6.10.tgz#79cd3776e64b8934d893d68aa4082091cb269f62"
+  integrity sha512-wqb+B1JJaSnQRKeAmgurcr0CH+PZ4vtAOfUfL7qpYgVgeJ5tfVXYfV/yEOPuq+/dAsXx07MBzmlOpBeyqgAVLw==
   dependencies:
     react-native-rook-logger-react-native "^0.2.8"
     rook_auth "^0.6.0"
