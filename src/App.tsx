@@ -6,23 +6,15 @@ import { store, persistor } from './store';
 import ApplicationNavigator from './navigators/Application';
 import { RookConnectProvider } from 'rook_auth';
 import './translations';
+import { credentials } from './utils/credentials';
 
 const App = () => {
-  /*const onBeforeLift = async (): Promise<void> => {
-    console.log('Resolviendo');
-    await new Promise(resolve =>
-      setTimeout(() => {
-        console.log('Resuelto');
-        resolve(true);
-      }, 2000),
-    );
-  };*/
   return (
     <RookConnectProvider
       keys={{
-        clientUUID: '9593d0ec-47c1-4477-a8ce-10d3f4f43127',
+        clientUUID: credentials.uuid,
         environment: 'sandbox',
-        password: 'YR9GoQ3mP0zey5nZ9w3WHQMvtvFvMdnefblx',
+        password: credentials.password,
       }}
     >
       <Provider store={store}>
