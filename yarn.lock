@@ -1437,7 +1437,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@react-native-async-storage/async-storage@^1.17.11", "@react-native-async-storage/async-storage@^1.18.1":
+"@react-native-async-storage/async-storage@^1.18.1":
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.18.1.tgz#b1aea4f07fb1dba3325b857b770671517ddab221"
   integrity sha512-70aFW8fVCKl+oA1AKPFDpE6s4t9pulj2QeLX+MabEmzfT3urd/3cckv45WJvtocdoIH/oXA3Y+YcCRJCcNa8mA==
@@ -6249,10 +6249,10 @@ react-native-reanimated@^3.0.2:
     setimmediate "^1.0.5"
     string-hash-64 "^1.0.3"
 
-react-native-rook-ios-transmission@^0.5.10:
-  version "0.5.10"
-  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.5.10.tgz#6e0915ffc2b559c2d57a622055611508629868ce"
-  integrity sha512-oxEOxv+oYzQI3YCvH41BDAWDTBv7YgMCAkPcjda2ZJ0aCTITJI/yZmKzrCIMW7KUWfezTLUZICB43ZAH2xCXtw==
+react-native-rook-ios-transmission@^0.5.11:
+  version "0.5.11"
+  resolved "https://registry.yarnpkg.com/react-native-rook-ios-transmission/-/react-native-rook-ios-transmission-0.5.11.tgz#85e637acfad4750f8e7b14dd99ace64b2546ec21"
+  integrity sha512-/JiFvypIh8vYCLDr1fE7W0LTKu0C0hLeK1gI3Ec9Ws3HQhAPGMtmo4jOL00r03kSTKDqY/n9WYPaQhGlW9/+vA==
   dependencies:
     react-native-rook-logger-react-native "^0.2.10"
     rook_auth "^0.6.1"
@@ -6286,11 +6286,6 @@ react-native-screens@^3.20.0:
   dependencies:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
-
-react-native-shared-preferences@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-shared-preferences/-/react-native-shared-preferences-1.0.2.tgz#952a02ab1e5418d48682cf1af96e2ee3fbf2a279"
-  integrity sha512-iLpHYE1kokUnPn9Y3Za301DkgDujjKMHKVUS9KOhHzIipc2mkzfFSo2bFAUYCfR2M4u0uZMpuVQviR19qypeHg==
 
 react-native@0.71.4:
   version "0.71.4"
@@ -6612,15 +6607,6 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
-rook_auth@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/rook_auth/-/rook_auth-0.6.0.tgz#d420fa4691df72fc21999b3b70238a4bf2550b28"
-  integrity sha512-yVL8rqmfgFhBwbBSgMJk/D+SWs7QjFW+sBNM8ekE8lLiQGcvqLFKajXnGcRsmygOwagM0jdiBs3p0HBrGk++dQ==
-  dependencies:
-    "@react-native-async-storage/async-storage" "^1.17.11"
-    axios "^1.3.4"
-    react-native-shared-preferences "^1.0.2"
-
 rook_auth@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/rook_auth/-/rook_auth-0.6.1.tgz#eaecd616c9a5e4f4ecca636ec4a10cad58cea759"
@@ -6628,14 +6614,14 @@ rook_auth@^0.6.1:
   dependencies:
     axios "^1.3.4"
 
-rook_users@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.3.1.tgz#b089c447287eba0c3f6aecb69e59d6ce6be957a5"
-  integrity sha512-stU6bZB2O5Hoj2dlKUGYj3jlRHsNDs/iMGgV6zSG+zPLF0etU+fjqX8O+QCvcRQ7+lhFNi0rmf0fT4UBXpxdiA==
+rook_users@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.3.2.tgz#2aa101c48429235abb25b179178ce0ecbf6205f2"
+  integrity sha512-HbmqqEH7itdzpVq/6PcjjDf0k83AGjGqyr9VvhA+0TtAmSvGeQ1qew7lveY9tv5tFZaf1UOygxgcLYNbdEtz9w==
   dependencies:
     axios "^1.3.4"
     react-native-mmkv "^2.10.2"
-    rook_auth "^0.6.0"
+    rook_auth "^0.6.1"
 
 run-parallel@^1.1.9:
   version "1.2.0"

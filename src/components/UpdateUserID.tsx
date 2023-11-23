@@ -8,14 +8,16 @@ import {
   View,
 } from 'react-native';
 import { useUser } from '../hooks/useUser';
+import { useRookAuth } from 'rook_auth';
 import { styles as global } from '../theme/styles/style';
 
 export const UpdateUserID = () => {
   const [userID, setUserID] = useState('');
+  const { apiURL, clientUUID, password } = useRookAuth();
   const { checkUserID, updateUser, ready } = useUser();
 
   useEffect(() => {
-    console.log(ready);
+    console.log(apiURL, clientUUID, password);
   }, [ready]);
 
   useEffect(() => {
