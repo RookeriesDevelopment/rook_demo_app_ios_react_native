@@ -15,9 +15,9 @@ PODS:
     - hermes-engine/Pre-built (= 0.71.4)
   - hermes-engine/Pre-built (0.71.4)
   - libevent (2.1.12)
-  - MMKV (1.3.1):
-    - MMKVCore (~> 1.3.1)
-  - MMKVCore (1.3.1)
+  - MMKV (1.3.2):
+    - MMKVCore (~> 1.3.2)
+  - MMKVCore (1.3.2)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -272,12 +272,12 @@ PODS:
   - react-native-mmkv (2.10.2):
     - MMKV (>= 1.2.13)
     - React-Core
-  - react-native-rook-ah (0.6.12):
+  - react-native-rook-ah (0.6.16):
     - React-Core
     - RookAppleHealth (= 1.0.18)
-  - react-native-rook-transmission (0.5.7):
+  - react-native-rook-transmission (0.5.12):
     - React-Core
-    - RookConnectTransmission (= 1.0.15)
+    - RookConnectTransmission (= 1.0.17)
   - react-native-safe-area-context (4.5.0):
     - RCT-Folly
     - RCTRequired
@@ -405,7 +405,7 @@ PODS:
     - React-Core
     - React-RCTImage
   - RookAppleHealth (1.0.18)
-  - RookConnectTransmission (1.0.15)
+  - RookConnectTransmission (1.0.17)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -562,8 +562,8 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: a1f157c49ea579c28b0296bda8530e980c45bdb3
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  MMKV: 5a07930c70c70b86cd87761a42c8f3836fb681d7
-  MMKVCore: e50135dbd33235b6ab390635991bab437ab873c0
+  MMKV: f21593c0af4b3f2a0ceb8f820f28bb639ea22bb7
+  MMKVCore: 31b4cb83f8266467eef20a35b6d78e409a11060d
   RCT-Folly: 424b8c9a7a0b9ab2886ffe9c3b041ef628fd4fb1
   RCTRequired: 5a024fdf458fa8c0d82fc262e76f982d4dcdecdd
   RCTTypeSafety: b6c253064466411c6810b45f66bc1e43ce0c54ba
@@ -579,8 +579,8 @@ SPEC CHECKSUMS:
   React-jsinspector: 1f51e775819199d3fe9410e69ee8d4c4161c7b06
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-mmkv: 9ae7ca3977e8ef48dbf7f066974eb844c20b5fd7
-  react-native-rook-ah: 14bfc29061abb8e35f56eeb0d2cf1aa6ddaea094
-  react-native-rook-transmission: 82972f0ec30bd733e9e1fbf161428bb67df95f8b
+  react-native-rook-ah: 60a109ea369e9e9e2163b668b476c2cee5d2f5e1
+  react-native-rook-transmission: bcfe0d77656987c88986760d0dfc17d63f33d20b
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
   React-RCTActionSheet: bfd675a10f06a18728ea15d82082d48f228a213a
@@ -601,7 +601,7 @@ SPEC CHECKSUMS:
   RNReanimated: f0dd6b881808e635ef0673f89642937d6c141314
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RookAppleHealth: 4ec4427e2d703b039e2af6e0addd8bb92db36ca4
-  RookConnectTransmission: 6f195101db4e49589b0eb754d19df352163268d0
+  RookConnectTransmission: 3923334791b66ee3b26d1ca3635903c7254ec996
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
 
 PODFILE CHECKSUM: c43644ac3e84dcb8f46d3f3ef4627195214403ab

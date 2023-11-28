@@ -18,11 +18,10 @@ export const BodyTransmission: FC<BodyTransmissionProps> = ({
 
   const { Fonts, Gutters } = useTheme();
 
-  const { enqueueBodySummary, uploadBodySummaries } = useRookAHBodyTransmission(
-    {
+  const { enqueueBodySummary, uploadBodySummaries, getBodySummariesStored } =
+    useRookAHBodyTransmission({
       userID,
-    },
-  );
+    });
   const { requestBodyPermissions } = useRookAHPermissions();
   const { getBodySummary } = useRookAHBody();
 
@@ -50,6 +49,16 @@ export const BodyTransmission: FC<BodyTransmissionProps> = ({
     }
   };
 
+  const handleQueueStored = async (): Promise<void> => {
+    try {
+      setResponse('Loading...');
+      const result = await getBodySummariesStored();
+      setResponse(`The queue has: ${result.length} queued`);
+    } catch (error) {
+      setResponse(`${error}`);
+    }
+  };
+
   return (
     <View style={styles.mt}>
       <TouchableWithoutFeedback onPress={requestPermission}>
@@ -67,6 +76,12 @@ export const BodyTransmission: FC<BodyTransmissionProps> = ({
       <TouchableWithoutFeedback onPress={handleUploadQueue}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Upload Enqueue</Text>
+        </View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={handleQueueStored}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Stored</Text>
         </View>
       </TouchableWithoutFeedback>
 
