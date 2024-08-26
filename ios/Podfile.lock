@@ -272,9 +272,9 @@ PODS:
   - react-native-mmkv (2.10.2):
     - MMKV (>= 1.2.13)
     - React-Core
-  - react-native-rook-ah (0.6.16):
+  - react-native-rook-ah (0.6.17):
     - React-Core
-    - RookAppleHealth (= 1.0.18)
+    - RookAppleHealth (= 1.0.19)
   - react-native-rook-transmission (0.5.12):
     - React-Core
     - RookConnectTransmission (= 1.0.17)
@@ -404,7 +404,7 @@ PODS:
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
-  - RookAppleHealth (1.0.18)
+  - RookAppleHealth (1.0.19)
   - RookConnectTransmission (1.0.17)
   - Yoga (1.14.0)
 
@@ -579,7 +579,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 1f51e775819199d3fe9410e69ee8d4c4161c7b06
   React-logger: 0d58569ec51d30d1792c5e86a8e3b78d24b582c6
   react-native-mmkv: 9ae7ca3977e8ef48dbf7f066974eb844c20b5fd7
-  react-native-rook-ah: 60a109ea369e9e9e2163b668b476c2cee5d2f5e1
+  react-native-rook-ah: 1c755c7cd9cb466bd63b90eb2858d11454032374
   react-native-rook-transmission: bcfe0d77656987c88986760d0dfc17d63f33d20b
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
   React-perflogger: 0bb0522a12e058f6eb69d888bc16f40c16c4b907
@@ -600,7 +600,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNReanimated: f0dd6b881808e635ef0673f89642937d6c141314
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
-  RookAppleHealth: 4ec4427e2d703b039e2af6e0addd8bb92db36ca4
+  RookAppleHealth: 8aa86d796ae407fee12f607f053e0192accac0b2
   RookConnectTransmission: 3923334791b66ee3b26d1ca3635903c7254ec996
   Yoga: 79dd7410de6f8ad73a77c868d3d368843f0c93e0
 

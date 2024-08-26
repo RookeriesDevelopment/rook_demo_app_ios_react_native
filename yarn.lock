@@ -6266,10 +6266,10 @@ react-native-rook-logger-react-native@^0.2.10:
     axios "^1.5.1"
     xstate "^4.38.2"
 
-react-native-rook_ah@^0.6.16:
-  version "0.6.16"
-  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.6.16.tgz#03e6910971e5fbab05838e2fb74d955a795d4526"
-  integrity sha512-NQ6hLm4EfE5XG4TDhARu4dzvaH0fhcyJ5ORsfS84qYWQ7PyoAsuavec7SDJD1N6Gbhx+aqu1b9qdZi1Ye2yQOA==
+react-native-rook_ah@^0.6.17:
+  version "0.6.17"
+  resolved "https://registry.yarnpkg.com/react-native-rook_ah/-/react-native-rook_ah-0.6.17.tgz#dafc214f6e0df86aa7e6b0fbb36b6639bf893dc2"
+  integrity sha512-Y8c8ehpGt7Auhl4eTe1/KoByVweLYhedOJJT/V7Z9bmvx8hXxg17F4YqwkeRtJE/qsiK4IvGIwDeyABR1qRjIg==
   dependencies:
     react-native-rook-logger-react-native "^0.2.10"
     rook_auth "^0.6.1"
@@ -6614,10 +6614,10 @@ rook_auth@^0.6.1:
   dependencies:
     axios "^1.3.4"
 
-rook_users@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.3.2.tgz#2aa101c48429235abb25b179178ce0ecbf6205f2"
-  integrity sha512-HbmqqEH7itdzpVq/6PcjjDf0k83AGjGqyr9VvhA+0TtAmSvGeQ1qew7lveY9tv5tFZaf1UOygxgcLYNbdEtz9w==
+rook_users@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/rook_users/-/rook_users-0.4.0.tgz#306f609ca70942f162a494ea475e36e8d3cfb17f"
+  integrity sha512-e6QvfFTb/G8Xb6VuYZyfFAPosV0d+2wlsk3BOdReqXr0uA+SerXiOhW3wO293/7iUn2tGsgXNLf504lpM7zORw==
   dependencies:
     axios "^1.3.4"
     react-native-mmkv "^2.10.2"
